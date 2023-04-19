@@ -1,1 +1,2 @@
 beautifulsoup4==4.12.2
+colorlog==6.7.0
