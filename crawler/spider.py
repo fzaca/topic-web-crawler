@@ -1,6 +1,6 @@
-import sys, signal
+import sys, signal, time
 
-from config import DEPTH_LIMIT, KEYWORDS, MIN_KEYWORD_OCCURRENCES
+from config import DEPTH_LIMIT, KEYWORDS, MIN_KEYWORD_OCCURRENCES, WAIT_TIME
 from .downloader import downloader
 from .parser import parse_html
 from .storage import storage_content, storage_urls
@@ -26,6 +26,7 @@ class Spider:
             self.visited_urls.add(url)
             # Download
             html = downloader(url)
+            time.sleep(WAIT_TIME)
             # Parse
             new_urls, data = parse_html(html)
             # Storage
