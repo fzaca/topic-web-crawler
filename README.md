@@ -1,6 +1,6 @@
 # Topic Web Crawler
 
-Este es un proyecto de web crawler en Python que busca palabras clave en sitios web y devuelve los resultados.
+Este proyecto es un web crawler diseñado para recopilar información de páginas web. Puedes utilizar una o varias URLs como punto de partida para iniciar la búsqueda. Además, puedes definir una lista de palabras clave para buscar en el contenido de la página. Si se encuentran coincidencias de palabras clave en la página, se guarda su contenido en un archivo JSON. El proyecto también te permite establecer un límite de profundidad de búsqueda y un tiempo de espera máximo para cada descarga.
 
 <p align="center"><img src='https://raw.githubusercontent.com/Xukay101/topic-web-crawler/master/demo.gif' /></p>
 
