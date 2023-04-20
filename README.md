@@ -2,6 +2,8 @@
 
 Este es un proyecto de web crawler en Python que busca palabras clave en sitios web y devuelve los resultados.
 
+<p align="center"><img src='https://raw.githubusercontent.com/Xukay101/topic-web-crawler/master/demo.gif' /></p>
+
 ## Requisitos
 
 Este proyecto requiere Python 3.5 o superior.
