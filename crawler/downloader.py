@@ -6,10 +6,10 @@ from config import MAX_DOWNLOAD_TIME
 
 def downloader(url):
     try:
-        logging.info('Downloading: %s', url[:50] + '...' if len(url) > 50 else url)
+        logging.info('Obtaining data from %s', url[:50] + '...' if len(url) > 50 else url)
         with urlopen(url, timeout=MAX_DOWNLOAD_TIME) as session:
             html = session.read()
             return html
-    except (URLError, TimeoutError):
-        logging.error('Downloading: %s', url)
+    except (URLError, TimeoutError, UnicodeEncodeError):
+        logging.error('Failed to obtain data from %s', url)
         return None
