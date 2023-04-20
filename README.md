@@ -39,3 +39,8 @@ La información recopilada se guardará en dos archivos: `data.json` y `urls.txt
 ## Uso de palabras claves
 
 Si desea utilizar palabras clave para buscar información en el contenido del sitio web, simplemente agregue una o varias palabras clave a la lista `KEYWORDS` en el archivo de configuración `config.py`. El web crawler buscará estas palabras clave en el contenido de cada sitio web descargado y guardará la información en el archivo `data.json` si se cumplen las condiciones especificadas.
+
+## Autor ✒️
+
+* **Jose Zacarías Flores**  - [Xukay101](https://github.com/Xukay101)
+
