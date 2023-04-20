@@ -10,5 +10,5 @@ def downloader(url):
             html = session.read()
             return html
     except URLError as e:
-        logging.info('Failed to download: %s', e)
+        logging.error('Downloading: %s', url)
         return None
