@@ -30,3 +30,12 @@ El archivo de configuración `config.py` contiene los siguientes parámetros:
 ## Ejecución
 
 Para ejecutar el web crawler, simplemente ejecute el archivo `main.py` seguido de uno o varios URLs. Por ejemplo:
+```
+$ python main.py https://www.example.com
+```
+
+La información recopilada se guardará en dos archivos: `data.json` y `urls.txt`, ubicados en la carpeta `data`. El archivo `data.json` contendrá la información sobre los sitios web encontrados, mientras que `urls.txt` contendrá una lista de los URLs visitadas.
+
+## Uso de palabras claves
+
+Si desea utilizar palabras clave para buscar información en el contenido del sitio web, simplemente agregue una o varias palabras clave a la lista `KEYWORDS` en el archivo de configuración `config.py`. El web crawler buscará estas palabras clave en el contenido de cada sitio web descargado y guardará la información en el archivo `data.json` si se cumplen las condiciones especificadas.
