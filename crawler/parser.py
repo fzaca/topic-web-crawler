@@ -18,13 +18,13 @@ def parse_html(html):
         if url.startswith('http'):
             urls.append(url)
 
-    title = soup.title.string
+    title = soup.title.string if soup.title else ''
     text = soup.get_text()
     meta = soup.find('meta', attrs={'name': 'description'})
 
     data = {}
 
-    data['title'] = title if title else ''
+    data['title'] = title
     data['text'] = text
 
     freq = Counter(text.lower().split())
