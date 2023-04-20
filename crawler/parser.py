@@ -1,9 +1,16 @@
 import re
+import logging, logging_config
+import xml.etree.ElementTree as ET
+
 from collections import Counter
 from bs4 import BeautifulSoup, Comment
 from config import KEYWORDS
 
 def parse_html(html):
+    if is_xml(html):
+        logging.warning('Skipping XML')
+        return None, None
+
     soup = BeautifulSoup(html, 'html.parser')
 
     # Limpieza de los datos
@@ -32,5 +39,12 @@ def parse_html(html):
         data['keyword_freq'] = {}
         for keyword in KEYWORDS:
             data['keyword_freq'][keyword.lower()] = freq[keyword]
-            
+
     return urls, data
+
+def is_xml(content):
+    try:
+        ET.fromstring(content)
+        return True
+    except ET.ParseError:
+        return False

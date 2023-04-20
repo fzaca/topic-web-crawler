@@ -34,6 +34,8 @@ class Spider:
             time.sleep(WAIT_TIME)
             # Parse
             new_urls, data = parse_html(html)
+            if not data:
+                continue
             # Storage
             if KEYWORDS:
                 cant = sum(data['keyword_freq'].values())
