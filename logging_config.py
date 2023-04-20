@@ -7,11 +7,13 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
-logging.basicConfig(
-    filename='logs/error.log',
-    level=logging.ERROR,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+
+# Configuración del logger para los errores
+error_logger = logging.getLogger('error_logger')
+error_logger.setLevel(logging.ERROR)
+error_logger_file_handler = logging.FileHandler('logs/error.log')
+error_logger_file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+error_logger.addHandler(error_logger_file_handler)
 
 # Configuración del logger para la consola
 console_info_handler = colorlog.StreamHandler()
@@ -50,4 +52,4 @@ console_error_formatter = colorlog.ColoredFormatter(
     style='%'
 )
 console_error_handler.setFormatter(console_error_formatter)
-logging.getLogger().addHandler(console_error_handler)
+error_logger.addHandler(console_error_handler)
