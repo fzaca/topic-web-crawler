@@ -6,8 +6,14 @@ Este es un proyecto de web crawler en Python que busca palabras clave en sitios 
 
 Este proyecto requiere Python 3.5 o superior.
 
-  1 - Descarga o clona el repositorio.
+## Instalación
 
-Instala los requisitos del proyecto con el siguiente comando:
+1. Descarga o clona el repositorio.
+```
+$ git clone https://github.com/Xukay101/topic-web-crawler.git
+```
 
-pip install -r requirements.txt
+2. Instala los requisitos del proyecto con el siguiente comando:
+```
+$ pip install -r requirements.txt
+```
