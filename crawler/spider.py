@@ -12,7 +12,6 @@ class Spider:
 
         self.urls = start_urls
         self.visited_urls = set()
-        self.storage_urls = []
 
         self.data = []
 
@@ -36,15 +35,15 @@ class Spider:
             new_urls, data = parse_html(html)
             if not data:
                 continue
+            else:
+                data['url'] = url
             # Storage
             if KEYWORDS:
                 cant = sum(data['keyword_freq'].values())
                 if cant >= MIN_KEYWORD_OCCURRENCES:
                     self.data.append(data)
-                    self.storage_urls.append(url)
             else:
                 self.data.append(data)
-                self.storage_urls.append(url)
 
             self.urls += new_urls
         
@@ -56,5 +55,5 @@ class Spider:
 
     def end(self):
         storage_content(self.data)
-        storage_urls(self.storage_urls)
+        storage_urls(self.visited_urls)
         sys.exit(0)
